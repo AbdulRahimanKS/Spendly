@@ -1,0 +1,80 @@
+# =========================
+# Backend (Python / FastAPI)
+# =========================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables
+.env
+.env.local
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# SQLite databases
+*.sqlite3
+*.db
+
+# =========================
+# Mobile (Expo / React Native)
+# =========================
+# (Note: The mobile folder usually has its own .gitignore, but including these just in case)
+
+node_modules/
+.expo/
+dist/
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# macOS
+.DS_Store
+
+# iOS/Android build folders (if prebuild is run)
+ios/
+android/

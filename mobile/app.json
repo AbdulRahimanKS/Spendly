@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "Spendly",
+    "slug": "mindful-spend",
+    "owner": "abdulrahimanks",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/spendly-main.png",
+    "userInterfaceStyle": "light",
+    "scheme": "mindfulspend",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/spendly-main.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#fafcf9"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/spendly-main.png",
+        "backgroundColor": "#fafcf9"
+      },
+      "package": "com.mindfulspend.app",
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "d7fd3ecc-e9bb-4af2-8fa5-a61748f03857"
+      }
+    }
+  }
+}
