@@ -3,11 +3,12 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import os
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./mindful_spend.db"
+# SQLALCHEMY_DATABASE_URL = "sqlite:///./mindful_spend.db"
 # For PostgreSQL: SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
+SQLALCHEMY_DATABASE_URL = "postgresql://postgres:Aa828118$sainu@db.wfjylbsulavpqxyscuvh.supabase.co:5432/postgres"
 
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+    SQLALCHEMY_DATABASE_URL
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
