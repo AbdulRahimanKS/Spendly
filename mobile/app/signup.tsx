@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, Link } from 'expo-router';
-import { Mail, Lock, User, ArrowRight, AlertCircle, CheckCircle } from 'lucide-react-native';
+import { Mail, Lock, User, ArrowRight, AlertCircle, CheckCircle, Eye, EyeOff } from 'lucide-react-native';
 import { theme } from '../src/theme/theme';
 import axios from 'axios';
 
@@ -24,6 +24,7 @@ export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [modalState, setModalState] = useState<{visible: boolean, type: 'error' | 'success', message: string}>({
     visible: false,
     type: 'error',
@@ -124,10 +125,17 @@ export default function Signup() {
                   style={styles.input}
                   placeholder="Create a password"
                   placeholderTextColor={theme.colors.outline}
-                  secureTextEntry
+                  secureTextEntry={!isPasswordVisible}
                   value={password}
                   onChangeText={setPassword}
                 />
+                <TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)} style={styles.eyeIcon}>
+                  {isPasswordVisible ? (
+                    <EyeOff size={20} color={theme.colors.outline} />
+                  ) : (
+                    <Eye size={20} color={theme.colors.outline} />
+                  )}
+                </TouchableOpacity>
               </View>
             </View>
 
@@ -340,5 +348,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Manrope-Bold',
     fontSize: 14,
     color: theme.colors.white,
+  },
+  eyeIcon: {
+    padding: 8,
   }
 });

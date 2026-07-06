@@ -3,9 +3,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import os
 
-# SQLALCHEMY_DATABASE_URL = "sqlite:///./mindful_spend.db"
-# For PostgreSQL: SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres.wfjylbsulavpqxyscuvh:Aa828118$sainu@aws-1-ap-southeast-1.pooler.supabase.com:6543/postgres"
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./mindful_spend.db")
+
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL
 )

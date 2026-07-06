@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, Link } from 'expo-router';
-import { Mail, Lock, ArrowRight, AlertCircle } from 'lucide-react-native';
+import { Mail, Lock, ArrowRight, AlertCircle, Eye, EyeOff } from 'lucide-react-native';
 import { theme } from '../src/theme/theme';
 import { useAuthStore } from '../src/store/authStore';
 import axios from 'axios';
@@ -27,6 +27,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const handleLogin = async () => {
     if (!email || !password) {
@@ -98,10 +99,17 @@ export default function Login() {
                   style={styles.input}
                   placeholder="Enter your password"
                   placeholderTextColor={theme.colors.outline}
-                  secureTextEntry
+                  secureTextEntry={!isPasswordVisible}
                   value={password}
                   onChangeText={setPassword}
                 />
+                <TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)} style={styles.eyeIcon}>
+                  {isPasswordVisible ? (
+                    <EyeOff size={20} color={theme.colors.outline} />
+                  ) : (
+                    <Eye size={20} color={theme.colors.outline} />
+                  )}
+                </TouchableOpacity>
               </View>
             </View>
 
@@ -301,5 +309,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Manrope-Bold',
     fontSize: 14,
     color: theme.colors.white,
+  },
+  eyeIcon: {
+    padding: 8,
   }
 });

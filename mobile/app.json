@@ -5,23 +5,19 @@
     "owner": "abdulrahimanks",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/spendly-main.png",
+    "icon": "./assets/build-logo.png",
     "userInterfaceStyle": "light",
     "scheme": "mindfulspend",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/spendly-main.png",
-      "resizeMode": "cover",
+      "image": "./assets/build-logo.png",
+      "resizeMode": "contain",
       "backgroundColor": "#fafcf9"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/spendly-main.png",
-        "backgroundColor": "#fafcf9"
-      },
       "package": "com.mindfulspend.app",
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
